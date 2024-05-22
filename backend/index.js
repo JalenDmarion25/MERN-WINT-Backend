@@ -25,7 +25,7 @@ app.use('/api/country/', countryRoutes)
 
 mongoose.connect(process.env.MONGO_DATABASE).then(() =>{
     console.log("Database connected!!!");
-    app.listen(process.env.PORT, () =>{
+    app.listen(process.env.PORT || 8000, () =>{
         console.log('Server is running on ', process.env.PORT)
     });
 }).catch((error) => console.log(error));
