@@ -18,7 +18,7 @@ const CountryDetail = () => {
       const fetchData = async () => {
         try {
           // Fetch country details
-          const response = await fetch(`http://localhost:8000/api/country/details/${code}`);
+          const response = await fetch(`https://mern-wint.vercel.app/api/country/details/${code}`);
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
@@ -39,7 +39,7 @@ const CountryDetail = () => {
           // Fetch border countries
           if (data.borders && data.borders.length > 0) {
             const borderPromises = data.borders.map(borderCode =>
-              fetch(`http://localhost:8000/api/country/border/${borderCode}`).then(res => res.json())
+              fetch(`https://mern-wint.vercel.app/api/country/border/${borderCode}`).then(res => res.json())
             );
             const borderData = await Promise.all(borderPromises);
             setBorderCountries(borderData);
