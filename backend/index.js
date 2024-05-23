@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api/country/', countryRoutes);
+app.use('/MERN-WINT-Frontend/api/country/', countryRoutes);
 
 // Connect to the database and start the server
 mongoose.connect(process.env.MONGO_DATABASE)
